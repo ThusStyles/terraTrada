@@ -1,0 +1,24 @@
+<template name="profile">
+	<h2>{{ pluralName }} profile</h2>
+	<hr>
+	<h3>{{ pluralFirstName }} listings</h3>
+
+	<div class="listings-list">
+		{{#transition}}
+			{{#each listings}}
+				<div class="listingAnimate">{{>listing}}</div>
+			{{/each}}
+		{{/transition}}
+	</div>
+	
+
+	<br>
+    {{#if nextPath }} 
+		<div class="row">
+			<div class="col-md-2 col-md-offset-5">
+				<a class="btn btn-primary load-more" href="{{nextPath}}">Load more</a>
+			</div>
+		</div>
+		
+	{{/if}}
+</template>

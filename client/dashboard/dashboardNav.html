@@ -1,0 +1,13 @@
+<template name="dashboardNav">
+	<div class="col-md-3">
+		<ul class="nav nav-list" >
+		<li class="nav-header">Navigation</li>
+		<li class="{{activeLink "dashboard"}}"><a href="{{ pathFor "dashboard"}}">Dashboard</a></li>
+		<li class="{{activeLink "allUserListings"}}"><a href="{{ pathFor "allUserListings"}}">My Listings</a></li>
+		<li class="{{activeLink "allPlacedOrders"}}"><a href="{{ pathFor "allPlacedOrders"}}">My Placed Orders</a></li>
+		<li class="{{activeLink "allRecievedOrders"}}"><a href="{{ pathFor "allRecievedOrders"}}">My Recieved Orders</a></li>
+		
+		<li><a href="#" class="sign-out">Sign Out</a></li>
+		</ul>
+	</div>
+</template>

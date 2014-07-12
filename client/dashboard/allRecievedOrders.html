@@ -1,0 +1,29 @@
+<template name="allRecievedOrders">
+{{>dashboardHeader}}
+<div class="row">
+	{{>dashboardNav}}
+	<div class="col-md-9">
+	<!-- Listings -->
+	<h6 class="no-margin">All Recieved Orders</h6>
+	<hr>
+
+	{{#if hasRecievedOrders}}
+		{{#each orders}}
+			{{> recievedOrder}}
+			<hr>
+		{{/each}}
+	
+		
+		{{#if nextPath }}
+			<div class="row">
+				<div class="col-md-2 col-md-offset-5">
+					<a class="btn btn-primary load-more" href="{{nextPath}}">Load More</a>
+				</div>
+			</div>
+	{{/if}}
+	{{else}}
+		<p>You haven't recieved any orders yet!</p>
+	{{/if}}
+	</div>
+</div>
+</template>

@@ -1,0 +1,1 @@
+Lives = new Meteor.Collection("lives");

@@ -1,0 +1,45 @@
+<head>
+	<meta name="robots" content="nofollow" />
+</head>
+<template name="order">
+	<h3>Item ordered on {{ fullDate epoch }} {{#if userPlaced }} from {{else}} by {{/if}} {{ name }}</h3>
+	<hr>
+	<h4>Details</h4>
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Title</th>
+				<th>Type</th>
+				<th>Description</th>
+				<th>Price</th>
+				<th>Quantity</th>
+				<th>Total Price</th>
+				<th>Status</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>{{ title }}</td>
+				<td>{{ capital type }}</td>
+				<td>{{ description }}</td>
+				<td>T{{ price }}</td>
+				<td>{{ quantity }}</td>
+				<td>T{{ totalAmount }}</td>
+				{{#if userPlaced }}
+					<td>{{ status }}</td>
+				{{else}}
+				<div class="btn-group select mbn">
+					<button style="width: 150px;" class="btn dropdown-toggle clearfix btn-info" data-toggle="dropdown"><span class="filter-option pull-left">{{status}}</span>&nbsp;<span class="caret"></span></button>
+
+					<span class="dropdown-arrow"></span>
+					<ul class="dropdown-menu" role="menu">
+						<li><a class="pending" href="#">Pending</a></li>
+						<li><a class="processing" href="#">Processing</a></li>
+						<li><a class="completed" href="#">Completed</a></li>
+					</ul>
+				</div>
+				{{/if}}
+			</tr>
+		</tbody>
+	</table>
+</template>

@@ -1,0 +1,95 @@
+<head>
+	<meta name="robots" content="nofollow" />
+</head>
+<template name="newProductListing">
+<h2>Create a new product listing</h2>
+<hr>
+
+	<form id="newListing" class="inverted">
+	<div class="row">
+		<div class="col-md-6">
+			<div class="form-group">
+				<label>Title</label>
+				<input class="form-control" id="listing-title" placeholder="Title of the product, e.g. iPhone 5">
+			</div>
+		</div>
+
+		<div class="col-md-6">
+			<div class="form-group">
+			  <label>How many do you have to sell?*</label><br>
+			  <input type="text" id="spinner-01" value="1" class="listing-quantity spinner form-control" />
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-6">
+			<div class="form-group">
+				<label>Price*</label>
+				<input class="form-control" id="listing-price" placeholder="Price in Teras, e.g. 50">
+			</div>
+
+			<div class="form-group">
+				<label>Description*</label>
+				<textarea class="form-control" id="listing-description" style="height: 150px;" placeholder="A description of the product, e.g. The produce is a used white iPhone 5"></textarea>
+			</div>
+
+			<div class="form-group overview">
+				<label>Overview ( Max 6 points )</label>
+				<div class="overview-item">
+					<div class="row">
+						<div class="col-md-1"><span style="margin-top: 0.65em;" class="glyphicon glyphicon-asterisk"></span></div>
+						<div class="col-md-9">
+							<input class="overview-points form-control" type="text">
+						</div>
+						
+					</div>
+				</div>	
+			</div>
+			<div class="row">
+					<div class="col-md-1 col-md-offset-1"><a href="#" class="add-overview btn btn-primary"><span class="glyphicon glyphicon-plus"></span></a></div>
+			</div>
+		</div>
+
+		<div class="col-md-6">
+
+		<div class="form-group">
+				<label>Category</label>
+					<select placeholder="Select a category" id="cat-select">
+					<option value="">Select a category</option>
+					
+						{{#each categories}}
+						<option value="{{url}}">{{title}}</option>
+						{{/each}}
+					
+					
+					</select>
+			</div>
+
+			<div class="form-group">
+			<label>Image of product</label>
+			  <div class="fileinput fileinput-new" data-provides="fileinput">
+			    <div class="fileinput-new thumbnail" style="width: 200px; height: 150px;">
+			      <img src="holder.js/100%x100%">
+			    </div>
+			    <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px;"></div>
+			    <div>
+			      <span class="btn btn-primary btn-embossed btn-file">
+			        <span class="fileinput-new"><span class="fui-image"></span>  Select image</span>
+			        <span class="fileinput-exists"><span class="fui-gear"></span>  Change</span>
+			        <input type="file" id="image" name="...">
+			      </span>
+			      <a href="#" class="btn btn-primary btn-embossed fileinput-exists" data-dismiss="fileinput"><span class="fui-trash"></span>  Remove</a>
+			    </div>
+			  </div>
+			</div>
+		</div>
+
+	</div>
+
+	<hr>
+	<div class="ui inverted dimmer"></div>
+	<input type="submit" class="btn btn-primary" value="Create">
+		
+	</form>
+</template>

@@ -1,0 +1,104 @@
+<template name="listingPage">
+	<div class="row product-page">
+		
+			<div class="col-md-5">
+			{{#if photoReady }}
+				<img class="img-rounded" alt="{{title}}" src="{{ photo.url store="mains" }}">
+			{{else}}
+				<div class="imageSpinner">
+					{{>spinner}}
+				</div>
+			{{/if}}
+			</div>
+			<div class="col-md-7">
+				
+				<h2 class="break-word">{{ title }}</h2>
+				{{#if favourited }}
+					<span class="label label-warning label-lg">Favourited</span>
+					<a href="#" class="btn btn-default btn-xs favourite"><span class="glyphicon glyphicon-star"></span>Remove From Favourites</a>
+				{{else}}
+					Like this and want to save it for later? <a href="#" class="btn btn-default btn-xs favourite"><span class="glyphicon glyphicon-star-empty"></span>Add To Favourites</a>
+				{{/if}}
+				<hr>
+				<h6>Overview</h6>
+				<ul>
+				{{#each overviewPoints}}
+					<li>{{this}}</li>
+				{{/each}}
+				</ul>
+				
+				<hr>
+				<span class="label label-info label-lg">
+				{{#if product }}
+					{{ quantity }} available
+				{{else}}
+					expected time {{ quantity }} days
+				{{/if}}
+				</span>				
+				<span class="label label-default label-lg">Listed by {{ name }}</span>
+				<span class="label label-primary label-lg">Category - <a href="{{categoryPath}}">{{categoryTitle}}</a></span>
+				<hr>
+				<div id="fb-root"></div>
+				<div class="social-buttons">
+					<div class="fb-like" data-href="{{url}}" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
+					<div class="clear"></div>
+				</div>
+				<hr>
+				<form id="add-to-cart">
+					<div class="row">
+						<div class="col-md-1">
+							<h4 class="title-margin">T{{price}}</h4>
+						</div>
+					{{#if product }}
+						<div class="col-md-2 spinner-container">
+							<input type="text" id="spinner-01" value="1" class="listing-quantity spinner form-control" />
+						</div>
+						{{/if}}
+						
+						<div class="col-md-8">
+							<input type="submit" id="add-to-cart" value="Add to cart" class="btn btn-primary">
+						</div>
+					</div>
+				</form>
+
+			</div>
+
+			
+
+		</div>
+
+		<div class="row">
+			<div class="col-md-5">
+				{{#if hasMore }}
+					<div class="more-from">
+						<h6>More from {{ name }}</h6>
+						<div class="more-from-items">
+								{{#each moreFromItems}}
+									{{> moreFromItem }}
+								{{/each}}
+						</div>
+					</div>
+				{{/if}}
+			</div>
+			<div class="col-md-7">
+				<hr>
+				<h6>Description</h6>
+				<p class="break-word description">{{ description }}</p>
+			</div>
+		</div>
+	
+</template>
+
+<template name="moreFromItem">
+	<div class="row item">
+		<div class="col-md-6">
+			<a href="{{ pathFor "listingPage"}}"><img class="img-rounded" src="{{ photo.url }}"></a>
+		</div>
+		<div class="col-md-6">
+			<a href="{{ pathFor "listingPage"}}">{{ title }}</a>
+			<p>Price - T{{price}}</p>
+			<hr>
+			<a class="btn btn-primary" href="{{ pathFor "listingPage" }}">View</a>
+		</div>
+	</div>
+</template>

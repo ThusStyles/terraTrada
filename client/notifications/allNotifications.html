@@ -1,0 +1,35 @@
+<head>
+	<meta name="robots" content="nofollow" />
+</head>
+<template name="allNotifications">
+<h2>Your Notifications</h2>
+<hr>
+	{{#if hasNotifications }}
+		<div class="notifications-list">
+			{{#transition}}
+				{{#each notifications}}
+					<div class="listingAnimate">{{> fullNotification}}</div>
+				{{/each}}
+			{{/transition}}
+		</div>
+
+		{{#if nextPath }}
+			<div class="row">
+				<div class="col-md-2 col-md-offset-5">
+					<a class="btn btn-primary load-more" href="{{nextPath}}">Load More</a>
+				</div>
+			</div>
+		{{/if}}
+
+	{{else}}
+	
+			<div class="dialog dialog-success">
+				<div class="container">No notificiations</div>
+			</div>
+	
+	{{/if}}
+</template>
+
+<template name="fullNotification">
+	<div class="well">{{#if url}}<a href="{{url}}">{{message}}</a>{{else}}{{ message }}{{/if}} - <span title="{{ fullDate epoch }}">{{ fromNow epoch }}</span></div>
+</template>

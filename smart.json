@@ -1,0 +1,26 @@
+{
+  "packages": {
+    "HTML5-History-API": {},
+    "iron-router": {
+      "version": "0.7.0"
+    },
+    "iron-router-progress": {},
+    "toastr": {},
+    "spin": {},
+    "holder": {},
+    "accounts-meld": {},
+    "accounts-linkedin": {},
+    "persistent-session": {},
+    "collectionFS": {},
+    "cfs-s3": {},
+    "smart-publish": {},
+    "moment": {},
+    "subs-manager": {},
+    "kadira": {},
+    "ms-seo": {},
+    "phantomjs": {},
+    "facebook-sdk": {},
+    "fancy-select": {},
+    "fast-render": {}
+  }
+}

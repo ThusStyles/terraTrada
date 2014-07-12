@@ -1,0 +1,59 @@
+<head>
+	<meta name="robots" content="nofollow" />
+</head>
+<template name="cart">
+	{{#if isCheckout}}
+		<h2>Cart Items</h2>
+	{{else}}
+		<h2>Your cart</h2>
+	{{/if}}
+	{{#if hasCartItems}}
+	<table class="table">
+  		<thead>
+  			<tr><th>Image</th><th>Title</th><th>Price</th><th>Quantity</th><th>Total</th></tr>
+  		</thead>
+  		<tbody>
+	  		{{#each cartItems}}
+				{{>cartItem}}
+			{{/each}}
+		</tbody>
+	</table>
+		<hr>
+			<div class="row">
+				<div class="col-md-10"></div>
+				<div class="col-md-2">
+		{{#if isCheckout}}
+			<a href="#" class="place-order btn btn-primary">Place Order</a>
+		{{else}}
+			<a href="{{ pathFor "checkout"}}" class="checkout btn btn-primary">Checkout</a>
+		{{/if}}
+				</div>
+			</div>
+	{{else}}
+		Your cart is currently empty	
+	{{/if}}
+</template>
+
+<template name="cartItem">
+<tr>
+	<td>
+	{{#if photoReady }}
+		<img class="small-img" src="{{ photo.url store="thumbs"}}" alt="{{ listing.title }}">
+	{{else}}
+		{{>spinner}}
+	{{/if}}
+	</td>
+	<td><a href="{{pathFor "listingPage" _id=listing._id }}">{{ trimmed listing.title 30 }}</a></td>
+	<td>T{{ listing.price }}</td>
+	<td>
+	{{#if product }}
+		<input type="text" value="{{ quantity }}" id="{{ _id }}" class="spinner-05 form-control input-lg spinner" />
+		<a href="#" class="update btn btn-primary">Update</a>
+	{{else}}
+		{{ quantity }}
+	{{/if}}
+	</td>
+	<td>T{{ total }}</td>
+	<td><a href="#" class="cart-remove btn btn-danger">Remove</a></td>
+</tr>
+</template>

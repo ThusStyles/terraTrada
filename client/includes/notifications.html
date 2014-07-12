@@ -1,0 +1,22 @@
+<template name="notifications">
+	<li class="dropdown">
+        <a href="#" class="notificationList dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-bell"></span>Notifications {{#if hasUnreadNotifications}}<span class="navbar-unread"></span>{{/if}}</a>
+            <ul class="dropdown-menu">
+            {{#if hasNotifications }}
+              {{#each notifications}}
+                {{>notification}} 
+              {{/each}}
+              <li class="divider"></li>
+              <li><a href="{{ pathFor "allNotifications"}}">Show All</a></li>
+            {{else}}
+              <li><a href="#">No Notifications</a></li>
+            {{/if}}
+             
+              
+            </ul>
+    </li>
+</template>
+
+<template name="notification">
+	<li><a class="notification" href="{{#if url}}{{url}}{{else}}#{{/if}}">{{message}} - {{ fromNow epoch }}</a></li>
+</template>

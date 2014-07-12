@@ -1,0 +1,173 @@
+<template name="dashboard">
+
+{{>dashboardHeader}}
+	
+<!-- MAIN SECTION -->
+<div class="row">
+	{{>dashboardNav}}
+	<div class="col-md-9">
+	<!-- Listings -->
+	<h6 class="no-margin">Listings</h6>
+	<hr>
+		{{#if hasListings}}
+			{{#each listings}}	
+				{{> userListing}}
+				<hr>
+			{{/each}}
+		{{else}}
+			<p>When you create listings they will show up here</p>
+		{{/if}}
+	<!-- Listings end -->
+
+	<!-- Placed orders -->
+	<h6>Orders placed</h6>
+	<hr>
+		{{#if hasPlacedOrders}}
+			{{#each placedOrders}}
+				{{>placedOrder}}
+				<hr>
+			{{/each}}
+		{{else}}
+			<p>Orders that you place will show up here</p>
+		{{/if}}
+	<!-- Placed orders end -->
+
+	<!-- Recieved Orders -->
+		<h6>Orders recieved</h6>
+		<hr>
+		{{#if hasRecievedOrders}}
+			{{#each recievedOrders}}
+				{{>recievedOrder}}
+				<hr>
+			{{/each}}
+		{{else}}
+			<p>Orders that you recieve will show up here</p>
+		{{/if}}
+	<!-- Recieved Orders end -->
+	</div>
+</div>
+		
+
+</template>
+
+<template name="userListing">
+
+<div class="row">
+
+	<div class="col-md-4">
+		{{#if photoReady }}
+			<a href="{{ pathFor "listingPage" }}"><img class="img-rounded" alt="{{title}}" src="{{ photo.url store="mains" }}"></a>
+		{{else}}
+			<div class="imageSpinner">
+				{{>spinner}}
+			</div>
+		{{/if}}
+	</div>
+
+	<div class="col-md-8">
+		<div class="info">
+			<div class="row">
+				<div class="col-md-2">
+					<span class="label {{#if product }}label-primary{{else}}label-info{{/if}} label-lg product-label">{{ capital type }}</span>
+				</div>
+				<div class="col-md-8"><h5 class="product-name"><a href="{{ pathFor "listingPage" }}">{{ trimmed title 30}}</a></h5></div>
+				<div class="col-md-2 price-label"><strong>T{{price}}</strong></div>
+			</div>			
+		</div>
+
+		<hr>
+		<p class="break-word">{{ trimmed description 100 }}</p>
+		<hr>
+		<div class="row">
+			<div class="col-md-10">
+				{{#if product }}
+					<span class="label label-info label-lg">{{ quantity }} available</span>
+				{{else}}
+					<span class="label label-info label-lg">expected time - {{ quantity }} days</span>
+				{{/if}}
+				<span class="label label-primary label-lg">Category - {{categoryTitle}}</span>
+			</div>
+
+			<div class="actions col-md-2 pull-right">
+				<a href="{{pathFor "editListing"}}" class="btn btn-info btn-xs"><span class="glyphicon glyphicon-pencil"></span></a>
+				<a href="#" class="btn btn-danger delete-listing btn-xs"><span class="glyphicon glyphicon-remove"></span></a>
+			</div>
+		</div>
+
+	</div>
+</div>
+	
+</template>
+
+<template name="placedOrder">
+		<div class="row">
+			<div class="col-md-4">
+			{{#if photo}}
+				{{#if photoReady }}
+					<a href="{{ pathFor "order" }}"><img class="img-rounded" alt="{{title}}" src="{{ photo.url store="mains" }}"></a>
+				{{else}}
+					<div class="imageSpinner">
+						{{>spinner}}
+					</div>
+				{{/if}}
+			{{else}}
+				<img data-src="holder.js/100%x200/sky/text:Image Unavailable" alt="No Image">
+			{{/if}}
+				
+			</div>
+
+			<div class="col-md-8">
+				<h5 class="product-name">{{title}}</h5>
+				<span class="label label-default">Ordered on {{ fullDate epoch }}</span>
+				<hr>
+				<span class="label {{statusClass}}">{{status}}</span>
+				<span class="label label-default">Seller - <a href="{{ pathFor "profile" _id=seller._id}}">{{ seller.profile.name }}</a></span>
+				<span class="label label-info">Quantity - {{quantity}}</span>
+				<hr>
+				<span class="label label-primary label-lg">Total - T{{ totalAmount }}</span>
+				<a href="{{pathFor "order"}}" class="btn btn-info btn-xs">View</a>
+			</div>
+		</div>
+</template>
+
+<template name="recievedOrder">
+	<div class="row">
+		<div class="col-md-4">
+		{{#if photo}}
+			{{#if photoReady }}
+				<a href="{{ pathFor "order" }}"><img class="img-rounded" alt="{{title}}" src="{{ photo.url store="mains" }}"></a>
+			{{else}}
+				<div class="imageSpinner">
+					{{>spinner}}
+				</div>
+			{{/if}}
+		{{else}}
+			<img data-src="holder.js/100%x200/sky/text:Image Unavailable" alt="No Image">
+		{{/if}}
+			
+		</div>
+
+		<div class="col-md-8">
+			<div class="row">
+				<div class="col-md-8">
+					<h5 class="product-name">{{title}}</h5>
+				</div>
+				{{#if notCompleted }}
+					<div class="col-md-4">
+						<a href="#" class="btn btn-info {{statusButton}}">{{statusChange}}</a>
+					</div>
+				{{/if}}
+				
+			</div>
+			<span class="label label-default">Recieved on {{ fullDate epoch }}</span>
+			<hr>
+			<span class="label {{statusClass}}">{{status}}</span>
+			<span class="label label-default">Buyer - <a href="{{ pathFor "profile" _id=buyer._id}}">{{ buyer.profile.name }}</a></span>
+			<span class="label label-info">Quantity - {{quantity}}</span>
+			<hr>
+			<span class="label label-primary label-lg">Total - T{{ totalAmount }}</span>
+			<a href="{{pathFor "order"}}" class="btn btn-info btn-xs">View</a>
+		</div>
+	</div>
+</template>
+

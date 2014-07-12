@@ -1,0 +1,37 @@
+<template name="listing">
+
+	<div class="row listing-item">
+		<div class="col-md-4">
+			{{#if photoReady }}
+			<div class="image-link">
+				<a href="{{ pathFor "listingPage" }}"><img class="img-rounded" alt="{{title}}" src="{{ photo.url store="mains" }}">{{#if favourited }}<span class="label label-warning">Favourite</span>{{/if}}</a></div>
+			{{else}}
+				<div class="imageSpinner">
+					{{>spinner}}
+				</div>
+			{{/if}}
+		</div>
+		<div class="col-md-8">
+			<div class="info">
+				<div class="row">
+					<div class="col-md-2">
+						<span class="label {{#if product }}label-primary{{else}}label-info{{/if}} label-lg product-label">{{ capital type }}</span>
+					</div>
+					<div class="col-md-8"><h5 class="product-name"><a href="{{ pathFor "listingPage" }}">{{ trimmed title 30}}</a></h5></div>
+					<div class="col-md-2 price-label"><strong>T{{price}}</strong></div>
+				</div>			
+			</div>
+			<hr>
+			<p class="break-word">{{ trimmed description 100 }}</p>
+			<hr>
+			{{#if product }}
+				<span class="label label-info label-lg">{{ quantity }} available</span>
+			{{else}}
+				<span class="label label-info label-lg">expected time - {{ quantity }} days</span>
+			{{/if}}
+			<span class="label label-default label-lg" >listed by <a href="{{pathFor 'profile' _id=userId}}">{{ name }}</a></span>
+			<span class="label label-primary label-lg">Category - <a class="category" href="{{categoryPath}}">{{categoryTitle}}</a></span>
+		</div>
+	</div>
+
+</template>

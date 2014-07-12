@@ -1,0 +1,437 @@
+
+
+
+.toast{
+	box-shadow: none !important;
+	-webkit-box-shadow: none !important;
+}
+
+.toast:hover{
+	box-shadow: none !important;
+	-webkit-box-shadow: none !important;
+}
+
+.toast-success{
+	background-color: #1abc9c;
+}
+
+.toast-error{
+	background-color: #e74c3c;
+}
+
+.more-from h6{
+	background-color: #1abc9c;
+	text-align: center;
+	padding: 10px 0 5px 0;
+	color: #fff;
+	margin: 0;
+	font-weight: bold;
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
+}
+
+.more-from-items hr{
+	margin-top: 10px;
+	margin-bottom:25px;
+}
+.row img{
+	width: 100%;
+	max-width: 100%;
+	height: auto;
+}
+.more-from-items p{
+	margin:0;
+	padding:0;
+}
+
+.more-from-items{
+	padding: 10px 5px 5px 10px;
+	border: 8px solid #1abc9c;
+	margin: 0 auto;
+	border-bottom-left-radius: 4px;
+	border-bottom-right-radius: 4px;
+}
+.more-from-items .item{
+	margin-bottom: 5px;
+}
+.more-from-items .item .btn{
+	margin-top: -5px;
+}
+.more-from-items .item img{
+	width: 100%;
+}
+
+.more-from{
+	margin-top: 20px;
+}
+
+.image-link span{
+	top: 0;
+	left: 0;
+	position: absolute;
+}
+
+.image-link{
+	position: relative;
+}
+.listingAnimate {
+  -moz-transition: opacity 1s ease-in;
+  -webkit-transition: opacity 1s ease-in;
+  -o-transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease-in;
+  opacity: 1;
+}
+
+.overview .row{
+	margin-bottom: 10px;
+}
+
+.listingAnimate.off-screen {
+  opacity: 0;
+}
+.spinner-container{
+	margin-left: 20px;
+}
+.break-word{
+	word-wrap: break-word;
+}
+.search-select div.trigger{
+	width: 125px !important;
+}
+.title-margin{
+	margin-top: 5px;
+}
+
+.listing-page-price{
+	margin-right: 10px;
+}
+.social-btn{
+	margin: 5px 0 10px 0;
+	width: 100%;
+	font-size: 18px;
+}
+
+.no-margin{
+	margin-top: 0;
+}
+.imageSpinner{
+	margin-top: 150px;
+}
+.search-spinner{
+	margin-top: 20%;
+}
+.overall-spinner{
+	margin-top: 20%;
+}
+.listing-item img{
+	width: 100%;
+}
+#iron-router-progress {
+    background-color : #34495e;
+    box-shadow       : 0 0 0 #fff;
+}
+
+.small-img{
+	width: 100px;
+	height: auto;
+}
+.product-page h2{
+	word-wrap: break-word;
+	margin-top: 0px;
+}
+#iron-router-progress.spinner:before {
+    border-color : #34495e;
+}
+
+.label-lg{
+	font-size: 16px;
+}
+
+.product-name{
+	margin: 0 0 0px 0;
+	padding: 0;
+	height: 24px;
+}
+
+.product-label{
+	margin: 4px 10px 0 0;
+	padding-top: 3px;
+	height: 24px;
+}
+
+.price-label{
+	text-align: right;
+}
+
+.info{
+	height: 30px;
+}
+
+.form-slider{
+	top: 10px;
+}
+
+.listing-item{
+	padding-bottom: 30px;
+	padding-top: 30px;
+	border-bottom: 1px solid #eee; 
+}
+.table tr td, .table tr th{
+	text-align: center;
+}
+.table tbody>tr>td
+{
+    vertical-align: middle;
+    
+}
+.listings div:last-child{
+	border-bottom: none;
+	padding-bottom: 20px;
+}
+
+.label-info.label-lg a{
+	color: #fff;
+}
+
+.label-info.label-lg a:hover{
+	color: #eee;
+}
+.product-page img{
+	width: 100%;
+}
+
+.social-small{
+	font-size: 15px !important;
+}
+
+
+.actions.dropdown-toggle{
+	width: 100px;
+}
+
+.dashboard h2{
+	margin-top: 0px;
+}
+
+.balance{
+	text-align: center;
+}
+
+.bottom-menu {
+   position:absolute;
+   bottom:0;
+   left: 0;
+   width:100%;
+   height:99px;
+}
+.page-container{
+   min-height:100%;
+   position:relative;
+}
+.main-content{
+   padding-bottom:200px;
+ }
+
+html, body{
+    height:100%;
+}
+
+body{
+  padding-top: 5px;
+}
+
+.fb-like, .twitter-share-button, .pinterest, .gplus{
+	float: left;
+	width: 100px;
+	margin: 0;
+	margin-bottom: -15px;
+	padding: 0;
+
+}
+
+.fb-like{
+	width: 140px;
+	margin-top: -10px;
+}
+
+.twitter-share-button{
+	margin-right: -10px;
+}
+
+.gplus{
+	margin-right: -10px;
+	margin-bottom: -9px;
+}
+
+.pinterest{
+	margin-bottom: 10px;
+	margin-right: 10px;
+	width: 50px;
+}
+
+.PIN_1404077309987_pin_it_button_20{
+	margin-bottom: 10px;
+	margin-right: 10px;
+}
+
+.social-buttons{
+	padding-top: 5px;
+	height: 35px;
+}
+
+.clear{
+	clear: both;
+	float: none;
+}
+
+div.fancy-select {
+	position: relative;
+	font-weight: bold;
+	font-size: 13px;
+	color: #34495e;
+}
+
+div.fancy-select.disabled {
+	opacity: 0.5;
+}
+
+div.fancy-select select:focus + div.trigger {
+	
+}
+
+div.fancy-select select:focus + div.trigger.open {
+	box-shadow: none;
+}
+
+div.fancy-select div.trigger {
+	border-radius: 4px;
+	cursor: pointer;
+	padding: 9px 24px 6px 9px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	position: relative;
+	background: #fff;
+	border: 2px solid #bdc3c7;
+	border-top-color: #bdc3c7;
+	color: #34495e;
+	width: 200px;
+
+	transition: all 240ms ease-out;
+	-webkit-transition: all 240ms ease-out;
+	-moz-transition: all 240ms ease-out;
+	-ms-transition: all 240ms ease-out;
+	-o-transition: all 240ms ease-out;
+}
+
+div.fancy-select div.trigger:after {
+	content: "";
+	display: block;
+	position: absolute;
+	width: 0;
+	height: 0;
+	border: 5px solid transparent;
+	border-top-color: #bdc3c7;
+	top: 20px;
+	right: 9px;
+}
+
+div.fancy-select div.trigger.open {
+	background: #f6f7f9;
+	border: 2px solid #1abc9c;
+	color: #34495e;
+	box-shadow: none;
+}
+
+div.fancy-select div.trigger.open:after {
+	border-top-color: #1abc9c;
+}
+
+div.fancy-select ul.options {
+	list-style: none;
+	margin: 0;
+	position: absolute;
+	top: 40px;
+	left: 0;
+	visibility: hidden;
+	opacity: 0;
+	z-index: 50;
+	max-height: 300px;
+	overflow: auto;
+	background: #f6f7f9;
+	border-radius: 4px;
+	border-top: 1px solid #f6f7f9;
+	min-width: 200px;
+	padding: 0px;
+
+	transition: opacity 300ms ease-out, top 300ms ease-out, visibility 300ms ease-out;
+	-webkit-transition: opacity 300ms ease-out, top 300ms ease-out, visibility 300ms ease-out;
+	-moz-transition: opacity 300ms ease-out, top 300ms ease-out, visibility 300ms ease-out;
+	-ms-transition: opacity 300ms ease-out, top 300ms ease-out, visibility 300ms ease-out;
+	-o-transition: opacity 300ms ease-out, top 300ms ease-out, visibility 300ms ease-out;
+}
+
+div.fancy-select ul.options.open {
+	visibility: visible;
+	top: 50px;
+	opacity: 1;
+
+	/* have to use a non-visibility transition to prevent this iOS issue (bug?): */
+	/*http://stackoverflow.com/questions/10736478/css-animation-visibility-visible-works-on-chrome-and-safari-but-not-on-ios*/
+	transition: opacity 300ms ease-out, top 300ms ease-out;
+	-webkit-transition: opacity 300ms ease-out, top 300ms ease-out;
+	-moz-transition: opacity 300ms ease-out, top 300ms ease-out;
+	-ms-transition: opacity 300ms ease-out, top 300ms ease-out;
+	-o-transition: opacity 300ms ease-out, top 300ms ease-out;
+}
+
+div.fancy-select ul.options.overflowing {
+	top: auto;
+	bottom: 40px;
+
+	transition: opacity 300ms ease-out, bottom 300ms ease-out, visibility 300ms ease-out;
+	-webkit-transition: opacity 300ms ease-out, bottom 300ms ease-out, visibility 300ms ease-out;
+	-moz-transition: opacity 300ms ease-out, bottom 300ms ease-out, visibility 300ms ease-out;
+	-ms-transition: opacity 300ms ease-out, bottom 300ms ease-out, visibility 300ms ease-out;
+	-o-transition: opacity 300ms ease-out, bottom 300ms ease-out, visibility 300ms ease-out;
+}
+
+div.fancy-select ul.options.overflowing.open {
+	top: auto;
+	bottom: 50px;
+
+	transition: opacity 300ms ease-out, bottom 300ms ease-out;
+	-webkit-transition: opacity 300ms ease-out, bottom 300ms ease-out;
+	-moz-transition: opacity 300ms ease-out, bottom 300ms ease-out;
+	-ms-transition: opacity 300ms ease-out, bottom 300ms ease-out;
+	-o-transition: opacity 300ms ease-out, bottom 300ms ease-out;
+}
+
+div.fancy-select ul.options li {
+	padding: 8px 12px;
+	color: #34495e;
+	cursor: pointer;
+	white-space: nowrap;
+	transition: all 150ms ease-out;
+	-webkit-transition: all 150ms ease-out;
+	-moz-transition: all 150ms ease-out;
+	-ms-transition: all 150ms ease-out;
+	-o-transition: all 150ms ease-out;
+}
+
+div.fancy-select ul.options li.selected {
+	background: #1abc9c;
+	color: #fff;
+}
+
+div.fancy-select ul.options li.hover {
+	color: #bdc3c7;
+}
+
+.label-primary a{
+	color: #ddd;
+}
+
+.label-primary a:hover{
+	color: #fff;
+}

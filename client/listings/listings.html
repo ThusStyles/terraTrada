@@ -1,0 +1,149 @@
+<template name="listings">
+
+	<div class="row">
+		<div class="col-md-3">
+			
+
+			
+            <ul class="nav nav-tabs nav-append-content" role="tablist" id="navTabs">
+              <li class="active"><a href="#tab4" role="tab" data-toggle="tab">Products</a></li>
+              <li><a href="#tab5" role="tab" data-toggle="tab">Services</a></li>
+            </ul> <!-- /tabs -->
+
+            <div class="tab-content">
+
+              <div class="tab-pane active" id="tab4">
+                <ul class="nav nav-list" >
+				  <li class="nav-header">Product Categories</li>
+				  {{#each productCats}}
+				  	{{>category}}
+				  {{/each}}
+				 
+				</ul>
+              </div>
+
+              <div class="tab-pane" id="tab5">
+                <ul class="nav nav-list" >
+				  <li class="nav-header">Service Categories</li>
+				  {{#each serviceCats}}
+				  	{{>category}}
+				  {{/each}}
+				 
+				</ul>
+              </div>
+              
+            </div> <!-- /tab-content -->
+
+          </div>
+
+		
+
+		
+
+		<div class="col-md-9">
+			<div class="row">
+				<div class="col-md-3">
+					<form class="search-form">
+						<div class="form-group">
+					      <div class="input-group">		            	              
+				          <input type="text" value="{{#if searching }}{{ searching }}{{/if}}" class="form-control search" placeholder="Search">
+				          <span class="input-group-btn">
+				            	<button type="submit" class="btn"><span class="fui-search"></span></button>
+				          </span>
+				        </div>
+				    	</div>
+					</form>
+				</div>
+
+				<div class="col-md-4">
+					<ul class="nav nav-pills">
+					  <li class="{{ productClass }}">
+					    <a class="products-filter" href="{{productsPath}}">Products</a>
+					  </li>
+
+					  <li class="{{ serviceClass }}"> 
+					    <a class="services-filter" href="{{servicesPath}}">Services</a>
+					  </li>
+					</ul>
+				</div>
+
+				<div class="col-md-2">
+					<select placeholder="Select a category" id="cat-select" class="search-select">
+						<option value="">Sort By</option>
+						<option value="epoch">Date Listed</option>
+						<option value="title">Title</option>
+						<option value="price">Price</option>
+					</select>
+				</div>
+
+				<div class="col-md-1">
+					<a class="btn btn-primary" href="{{directionPath}}"><span class="glyphicon {{directionClass}}"></span></a>
+				</div>
+
+				<div class="col-md-1 pull-right">
+					<a href="#" class="clear-search btn btn-primary"><span class="glyphicon glyphicon-remove"></span></a>
+				</div>
+			</div>
+		</div>
+{{#if areListings }}
+<div class="col-md-9">
+
+		{{#if loading }}
+		<div class="search-spinner">
+		    {{> spinner}}
+		</div>
+		{{else}}
+		<div class="listings-list">
+		
+	        {{#each listings}}
+	           	<div>{{>listing}}</div>
+	        {{/each}}
+	    
+	    
+	    
+	    
+	    </div>
+	       
+	       	 <br>
+	        {{#if nextPath }} 
+				<div class="row">
+					<div class="col-md-2 col-md-offset-5">
+						<a class="btn btn-primary load-more" href="{{nextPath}}">Load more</a>
+					</div>
+				</div>
+				
+			{{/if}}
+		{{/if}}
+	
+	</div> 
+
+{{else}}
+
+	{{#if loading }}
+	<div class="col-md-9">
+		<div class="overall-spinner">
+		    {{> spinner}}
+		</div>
+	</div>
+	{{else}}
+	
+		<div class="col-md-9">	
+			<div class="dialog dialog-success">
+				<p style="margin: 0px;">No listings found</p>
+			</div>
+		</div>
+	{{/if}}
+	
+{{/if}}
+	
+</div>
+	
+        
+
+    
+</template>
+
+<template name="category">
+	<li class="{{activeClass}}"><a id="{{url}}" class="category" href="{{categoryPath}}">{{ title }}</a></li>
+</template>
+

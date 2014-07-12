@@ -1,0 +1,18 @@
+<head>
+  <!-- Classic Meta Tags -->
+  <meta property="fb:app_id" content="300267713483874" /> 
+  <meta name="viewport" content="initial-scale=1.0"/>
+</head>  
+
+<template name="layout">
+
+<div class="page-container">
+	<div class="container main-content">
+		{{>header}}
+		{{>errors}}
+		{{>yield}}
+	</div>
+
+	{{>footer}}
+</div>
+</template>

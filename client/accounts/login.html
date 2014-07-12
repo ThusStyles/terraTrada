@@ -1,0 +1,30 @@
+<template name="login">	
+
+<button class="login-facebook btn social-btn btn-social-facebook"><i class="fui-facebook"></i> Login With Facebook</button>
+
+
+<button class="login-google btn social-btn btn-social-googleplus"><i class="fui-googleplus"></i> Login With Google</button>
+
+<button class="login-linkedin btn social-btn btn-social-linkedin"><i class="fui-linkedin"></i> Login With LinkedIn</button>
+
+
+<hr>
+	<form id="login-form">
+		<div class="form-group">
+		<label>Email</label>
+  			<input type="email" class="form-control" placeholder="Email" id="login-email">
+		</div>
+
+		<div class="form-group">
+		<label>Password</label>
+			<input type="password" class="form-control" placeholder="Password" id="login-password">
+		</div>
+		<hr>
+			<input type="submit" value="Sign in" class="btn btn-primary" id="login-button">
+	
+	</form>
+
+  {{>passwordRecovery}}
+
+
+</template>

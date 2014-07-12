@@ -1,0 +1,60 @@
+<template name="header">
+	<nav class="navbar navbar-default navbar-lg" role="navigation">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-01">
+      <span class="sr-only">Toggle navigation</span>
+    </button>
+    <a class="navbar-brand" href="{{ pathFor "home"}}">TerraTrada</a>
+  </div>
+  <div class="collapse navbar-collapse" id="navbar-collapse-01">
+    <ul class="nav navbar-nav">			      
+      {{#if currentUser }}<li class="{{ activeLink "dashboard"}}"><a href="{{pathFor "dashboard"}}">Dashboard</a></li>
+      <li class="dropdown {{ activeEitherLink "newProductListing|newServiceListing" }}">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">New</a>
+          <ul class="dropdown-menu">
+            <li><a href="{{pathFor "newProductListing" }}">Product Listing</a></li>
+            <li><a href="{{pathFor "newServiceListing" }}">Service Listing</a></li>
+          </ul>
+        </li>
+
+      {{/if}}
+      <li class="{{ activeLink "listings"}}"><a href="{{pathFor "listings"}}">Listings</a></li>
+      <li class="{{ activeLink "lives"}}"><a href="{{pathFor "lives"}}">Live</a></li>
+    </ul> 
+
+
+    <div class="navbar-right">
+      <ul class="nav navbar-nav">
+        <li> 
+          <a href="{{ pathFor "cart"}}"><span class="glyphicon glyphicon-shopping-cart"></span>Cart<span class="navbar-new">{{ cartItems }}</span></a>
+        </li>
+        {{#if currentUser }}
+         
+         {{> notifications}}
+          
+
+          <li>
+            <a href="#" id="sign-out">Sign out</a>
+          </li>
+        {{else}}
+          <li class="{{ activeLink "loginSignup"}}">
+            <a href="{{pathFor "loginSignup"}}">Sign up</a>
+          </li>
+        {{/if}}
+      </ul>
+    </div>
+
+    <form class="navbar-form navbar-right nav-search" role="search">
+      <div class="form-group">
+        <div class="input-group">
+          <input class="form-control search-top" id="navbarInput-01" type="search" placeholder="Search">
+          <span class="input-group-btn">
+            <button type="submit" class="btn"><span class="fui-search"></span></button>
+          </span>            
+        </div>
+      </div>	             
+    </form>
+    
+  </div><!-- /.navbar-collapse -->
+</nav><!-- /navbar -->
+</template>

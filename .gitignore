@@ -1,0 +1,4 @@
+.deploy/
+.config/
+/dev.sh
+dev.sh

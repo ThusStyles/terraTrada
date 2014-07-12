@@ -1,0 +1,28 @@
+<template name="allPlacedOrders">
+{{>dashboardHeader}}
+<div class="row">
+	{{>dashboardNav}}
+	<div class="col-md-9">
+	<!-- Listings -->
+	<h6 class="no-margin">All Placed Orders</h6>
+	<hr>
+	{{#if hasPlacedOrders}}
+			{{#each orders}}
+				{{> placedOrder}}
+				<hr>
+			{{/each}}
+		
+			
+			{{#if nextPath }}
+				<div class="row">
+					<div class="col-md-2 col-md-offset-5">
+						<a class="btn btn-primary load-more" href="{{nextPath}}">Load More</a>
+					</div>
+				</div>
+		{{/if}}
+	{{else}}
+		<p>You haven't placed any orders yet!</p>
+	{{/if}}
+	</div>
+</div>
+</template>

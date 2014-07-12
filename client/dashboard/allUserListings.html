@@ -1,0 +1,28 @@
+<template name="allUserListings">
+{{>dashboardHeader}}
+<div class="row">
+	{{>dashboardNav}}
+	<div class="col-md-9">
+	<!-- Listings -->
+	<h6 class="no-margin">All Your Listings</h6>
+	<hr>
+	{{#if hasListings }}
+		{{#each listings}}
+			{{> userListing}}
+			<hr>
+		{{/each}}
+		
+		{{#if nextPath }}
+			<div class="row">
+				<div class="col-md-2 col-md-offset-5">
+					<a class="btn btn-primary load-more" href="{{nextPath}}">Load More</a>
+				</div>
+			</div>
+		{{/if}}
+	
+	{{else}}
+	<p>When you create listings then will show up here</p>
+	{{/if}}
+	</div>
+</div>
+</template>
