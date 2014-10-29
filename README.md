@@ -2,8 +2,6 @@
 
 TerraTrada is a trading platform built with Meteor JS
 
-It can be seen here - [http://www.theostylesdev.co.uk](http://www.theostylesdev.co.uk)
-
 ### Features
 
 + Realtime Updates
